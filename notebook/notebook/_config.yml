@@ -15,6 +15,10 @@ repository:
   url: https://github.com/kuti-b/zipserbuch
   branch: master  
 
+sphinx:
+  config:
+    html_extra_path: ['assets']
+
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
