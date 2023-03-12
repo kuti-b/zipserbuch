@@ -465,7 +465,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citizens</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;polgarok_final.xlsx&#39;</span><span class="p">)</span>
-<span class="n">citizens</span>
+<span class="n">citizens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -554,75 +554,8 @@ document.write(`
       <td>Máriássy János és Palugyai Zsófia menyegzőjén ...</td>
       <td>1620</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>202</th>
-      <td>NaN</td>
-      <td>Wolf, Johann (?-?)</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>nyomdász, több kutatást igényel</td>
-      <td>NaN</td>
-      <td>Részt vett Daniel Cramer és Christina Wolf esk...</td>
-      <td>1254</td>
-    </tr>
-    <tr>
-      <th>203</th>
-      <td>NaN</td>
-      <td>Zabeler, Hiob (?-?)</td>
-      <td>NaN</td>
-      <td>M. I. Z.; Z. I.; Zabler, Hiob</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1648-ban verset írt Christoph Schlegel és Rosi...</td>
-      <td>2232</td>
-    </tr>
-    <tr>
-      <th>204</th>
-      <td>NaN</td>
-      <td>Zabeler, Peter id. (1578-1645)</td>
-      <td>Grossenhain (Szászország)</td>
-      <td>Zabalerus, Petrus; Zabler Péter</td>
-      <td>evangélikus első lelkész és az észak-magyarors...</td>
-      <td>lectio/rmsz1/6367</td>
-      <td>Wittenbergi magiszteri címmel jött Kassára, ma...</td>
-      <td>1231; 1443; 1681; 1830; 1832; 1837; 1934; 1936...</td>
-    </tr>
-    <tr>
-      <th>205</th>
-      <td>NaN</td>
-      <td>Zabeler, Peter ifj. (?-?)</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Matthaeus Saxo tanítványa Lőcsén.</td>
-      <td>NaN</td>
-      <td>Említésre kerül Matthaeus Saxo 1629-es logikat...</td>
-      <td>1231; 1443; 1830</td>
-    </tr>
-    <tr>
-      <th>206</th>
-      <td>NaN</td>
-      <td>Zabeler, Susanna (?-?)</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Peter Zabeler lánya. 1640-ben hozzámegy Johann...</td>
-      <td>1830; 1832; 1837</td>
-    </tr>
   </tbody>
 </table>
-<p>207 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>Az alábbiakban a beolvasott nyomtatványok “címzettek” és “szerzők” oszlopait átolvasva, a nevekhez a polgár-adatbázisból hozzárendeljük a megfelelő polgárt, és egy relációs táblát készítünk a kettőből:</p>
@@ -663,12 +596,14 @@ document.write(`
                 <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;sender_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sender</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sender_id</span><span class="p">):</span>
                     <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;sender_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sender_id</span><span class="p">)</span>
+                    <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;sender_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">citizens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sender_id</span><span class="p">][</span><span class="s1">&#39;név&#39;</span><span class="p">])</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;sender_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
                 
                 <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;target_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">recipient</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">target_id</span><span class="p">):</span>
                     <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;target_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_id</span><span class="p">)</span>
+                    <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;target_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">citizens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">target_id</span><span class="p">][</span><span class="s1">&#39;név&#39;</span><span class="p">])</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">relation</span><span class="p">[</span><span class="s1">&#39;target_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
                 
@@ -724,13 +659,13 @@ document.write(`
       <td>1076</td>
       <td>Holtzmann, Stephanus</td>
       <td>-1</td>
-      <td>Thurzó Kristóf</td>
+      <td>Thurzó Kristóf (?-1614)</td>
       <td>185</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1230</td>
-      <td>Musculus, Wolfgang</td>
+      <td>Musculus, Wolfgang (?-?)</td>
       <td>125</td>
       <td>Cramer, Kaspar, id.</td>
       <td>-1</td>
@@ -738,7 +673,7 @@ document.write(`
     <tr>
       <th>2</th>
       <td>1231</td>
-      <td>Zabeler, Peter</td>
+      <td>Zabeler, Peter id. (1578-1645)</td>
       <td>204</td>
       <td>Holtzmann, Stephanus</td>
       <td>-1</td>
@@ -754,9 +689,9 @@ document.write(`
     <tr>
       <th>4</th>
       <td>1254</td>
-      <td>Musculus, Wolfgang</td>
+      <td>Musculus, Wolfgang (?-?)</td>
       <td>125</td>
-      <td>Cramer, Daniel</td>
+      <td>Cramer, Daniel (? -?)</td>
       <td>19</td>
     </tr>
   </tbody>
@@ -771,29 +706,57 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Az alábbiakban meghatározzuk az eseménytípusok színkódjait.<br>
+<span style="color: black"><strong> Halál - fekete</strong></span><br>
+<span style="color: purple"><strong>Esküvő - lila</strong></strong></span><br>
+<span style="color: red"><strong>Beiktatás - piros</strong></span><br>
+<span style="color: blue"><strong></strong>Általános üdvözlés - kék</strong></strong></strong></strong></span><br>
+<span style="color: lightgrey"><strong>Alapértelmezett - szürke</strong></strong></strong></span><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;halál&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;esküvő&#39;</span><span class="p">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;beiktatás&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;általános üdvözlés&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;grey&#39;</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">get_edge_color</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">edge_colors</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">edge_colors</span><span class="p">[</span><span class="nb">type</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">edge_colors</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A generált személyhez hozzáadjuk a rövid leírást, ami a pontokra való kattintáskor megjelenít. Illetve minden relációhoz hozzárendeljük a nyomtatvány számát és rövid leírását, majd megjelenítjük</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 
-
-<span class="c1"># Minden személyhez hozzáadjuk a rövid leírást, amit </span>
 <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">edges</span><span class="p">:</span>
-    <span class="n">to_node</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">])</span>
-    <span class="n">from_node</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;to&#39;</span><span class="p">])</span>
+    <span class="n">to_node</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;to&#39;</span><span class="p">])</span>
+    <span class="n">from_node</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">])</span>
     <span class="n">to_node</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Nem található leírás.&quot;</span>
     <span class="n">from_node</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Nem található leírás.&quot;</span>
     
-    <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;sender_id&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">string</span> <span class="o">=</span> <span class="n">citizens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;sender_id&#39;</span><span class="p">]][</span><span class="s1">&#39;rövid leírás&#39;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">from_node</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;target_id&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">string</span> <span class="o">=</span> <span class="n">citizens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;target_id&#39;</span><span class="p">]][</span><span class="s1">&#39;rövid leírás&#39;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">to_node</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="n">record_id</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;record_id&#39;</span><span class="p">]</span>
     
-        
+    <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">record_id</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">records</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">record_id</span><span class="p">][</span><span class="s1">&#39;a nyomtatvány rövid leírása&#39;</span><span class="p">])</span> 
+    <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_edge_color</span><span class="p">(</span><span class="n">records</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">record_id</span><span class="p">][</span><span class="s1">&#39;esemény&#39;</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;sender_id&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">string_sender</span> <span class="o">=</span> <span class="n">citizens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;sender_id&#39;</span><span class="p">]][</span><span class="s1">&#39;rövid leírás&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string_sender</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">from_node</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">string_sender</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;target_id&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">string_target</span> <span class="o">=</span> <span class="n">citizens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;target_id&#39;</span><span class="p">]][</span><span class="s1">&#39;rövid leírás&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string_target</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">to_node</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">string_target</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    
         
 <span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;relationship.html&#39;</span><span class="p">)</span>
