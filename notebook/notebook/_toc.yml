@@ -3,3 +3,5 @@
 
 format: jb-book
 root: zipserbuch
+chapters:
+- file: zipserbuch_stat
