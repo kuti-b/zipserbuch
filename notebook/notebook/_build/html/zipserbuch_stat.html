@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lőcsei demográfiai változások 1620-1667 között &#8212; Lőcsei szászok</title>
+    <title>Névegyezések vizsgálata &#8212; Lőcsei szászok</title>
   
   
   
@@ -61,10 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"1c40d567b0394455995164eb11864ef7": {"model_name": "VegaExprModel", "model_module": "ipydatagrid", "model_module_version": "^1.1.15", "state": {"_model_module": "ipydatagrid", "_model_module_version": "^1.1.15", "_model_name": "VegaExprModel", "_view_count": null, "_view_module": "ipydatagrid", "_view_module_version": "^1.1.15", "_view_name": "VegaExprView", "value": "default_value"}}, "2b2d4000790e4ab8a51d59969b3acb2c": {"model_name": "VegaExprModel", "model_module": "ipydatagrid", "model_module_version": "^1.1.15", "state": {"_model_module": "ipydatagrid", "_model_module_version": "^1.1.15", "_model_name": "VegaExprModel", "_view_count": null, "_view_module": "ipydatagrid", "_view_module_version": "^1.1.15", "_view_name": "VegaExprView", "value": "default_value"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'zipserbuch_stat';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="A lőcsei szászok alkalmi nyomtatványai" href="zipserbuch.html" />
+    <link rel="prev" title="A lőcsei polgárság kapcsolattörténeti vizsgálata (1614-1670)" href="zipserbuch.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,12 +154,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="zipserbuch.html">
-                    A lőcsei szászok alkalmi nyomtatványai
+                    A lőcsei polgárság kapcsolattörténeti vizsgálata (1614-1670)
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lőcsei demográfiai változások 1620-1667 között</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Névegyezések vizsgálata</a></li>
 </ul>
 
     </div>
@@ -369,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lőcsei demográfiai változások 1620-1667 között</h1>
+    <h1>Névegyezések vizsgálata</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,8 +386,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="locsei-demografiai-valtozasok-1620-1667-kozott">
-<h1>Lőcsei demográfiai változások 1620-1667 között<a class="headerlink" href="#locsei-demografiai-valtozasok-1620-1667-kozott" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="nevegyezesek-vizsgalata">
+<h1>Névegyezések vizsgálata<a class="headerlink" href="#nevegyezesek-vizsgalata" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
@@ -396,87 +399,68 @@ document.write(`
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
 
 
-<span class="n">records</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;nevsor.xlsx&#39;</span><span class="p">)</span>
+<span class="n">records</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;sources/zipserbuch.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;1620 vs 1667&#39;</span><span class="p">)</span>
 
 <span class="n">records</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">records</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;nevsor.xlsx&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">records</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
-<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/util/_decorators.py:317,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()),</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">317</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py:483,</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, decimal, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">483</span>     <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span> <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span>         <span class="s2">&quot;Engine should not be specified when passing &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="s2">&quot;an ExcelFile - ExcelFile already has the engine set&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>     <span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py:1629,</span> in <span class="ni">ExcelFile.__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1627</span>     <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;xls&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1628</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1629</span>     <span class="n">ext</span> <span class="o">=</span> <span class="n">inspect_excel_format</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1630</span>         <span class="n">content_or_path</span><span class="o">=</span><span class="n">path_or_buffer</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span>
-<span class="g g-Whitespace">   </span><span class="mi">1631</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1632</span>     <span class="k">if</span> <span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1633</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1634</span>             <span class="s2">&quot;Excel file format cannot be determined, you must specify &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1635</span>             <span class="s2">&quot;an engine manually.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1636</span>         <span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/excel/_base.py:1502,</span> in <span class="ni">inspect_excel_format</span><span class="nt">(content_or_path, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1499</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1500</span>     <span class="n">content_or_path</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1502</span> <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1503</span>     <span class="n">content_or_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1504</span> <span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span>     <span class="n">stream</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">handle</span>
-<span class="g g-Whitespace">   </span><span class="mi">1506</span>     <span class="n">stream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/common.py:866,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">857</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="c1"># Binary mode</span>
-<span class="ne">--&gt; </span><span class="mi">866</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">867</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;nevsor.xlsx&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lőcsei családok 1620</th>
+      <th>lőcsei családok 1667</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Abscheimen</td>
+      <td>Aaron</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Abzieher</td>
+      <td>Abrachamides</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audrich</td>
+      <td>Achband</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bank</td>
+      <td>Adam</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bardt</td>
+      <td>Adami</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citizens</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;szemelyek.xlsx&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citizens</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;sources/zipserbuch.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;személyek&#39;</span><span class="p">)</span>
 <span class="n">citizens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -513,7 +497,7 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>1001</td>
       <td>[szervezet] a besztercebányai evangélikus isko...</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -524,7 +508,7 @@ document.write(`
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>1002</td>
       <td>[szervezet] a lőcsei evangélikus gimnázium elő...</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -535,7 +519,7 @@ document.write(`
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>1003</td>
       <td>[szervezet] a lőcsei evangélikus gimnázium ünn...</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -546,7 +530,7 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
+      <td>1004</td>
       <td>[szervezet] a lőcsei evangélikus gimnázium viz...</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -557,7 +541,7 @@ document.write(`
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
+      <td>1005</td>
       <td>[szervezet] a lőcsei evangélikus gimnázium viz...</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -570,10 +554,10 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<p>Az alábbiakban két külön listába szedem az 1600-as névsort és az 1667-es névsort, majd a listákat metszem a Python beépített halmazkezelő függvényeivel. Ezekből az adatokból, a listák méretét megadva 2-elemű Venn-diagrammot tudunk készíteni a matplotlib-re épülő matplotlib-venn könyvtár segítségével.</p>
+<p>Az alábbiakban két külön listába rendezem az 1620. évi és az 1667. évi lőcsei birtokösszeírások névsorát, majd a listákat metszem a Python beépített halmazkezelő függvényével. Ezekből az adatokból, a listák méretét megadva 2-elemű Venn-diagramot tudunk készíteni a matplotlib-re épülő matplotlib-venn könyvtár segítségével. A diagram segítségével információt kaphatunk a népesség és a birtokviszonyok változásáról a két összeírás között eltelt időben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1620</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="s1">&#39;lőcsei családok 1600&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1620</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="s1">&#39;lőcsei családok 1620&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">list_1667</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="s1">&#39;lőcsei családok 1667&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">list_intersection</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">list_1620</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">list_1667</span><span class="p">))</span>
 
@@ -587,44 +571,5302 @@ document.write(`
 <img alt="_images/f4006bb5d44afe6941b9e7a7803fe496ce5eebcb0ebe5e2bd86efabf0906c4c2.png" src="_images/f4006bb5d44afe6941b9e7a7803fe496ce5eebcb0ebe5e2bd86efabf0906c4c2.png" />
 </div>
 </div>
-<p>A következőkben egy új adatstruktúrát határozunk meg, amiben az összes lőcse polgári családnév szerepel, majd összevetjük a polgárok névsorával.</p>
+<p>A következőkben szeretnénk meghatározni, hogy a birtokösszeírásokban szereplő családnevek közül hány fordul elő az alkalmi nyomtatványokban is. Ehhez egy új adatstruktúrát határozunk meg, amelyben a két összeírásban szereplő összes lőcsei családnév szerepel. Ezután importáljuk az alkalmi nyomtatványokban szereplő családneveket tartalmazó táblát is, majd összevetést végzünk az egyezésekről. Az így létrehozott táblázat első oszlopában szerepelnek a családnevek a birtokösszeírásokból, majd láthatjuk, hogy a név megjelenik-e az alkalmi nyomtatványok listájában. Ha az azonosság kétséges, százalékos egyezést is láthatunk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_in_citizen_records</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">index_name</span> <span class="o">=</span> <span class="n">citizens</span><span class="p">[</span><span class="s1">&#39;név&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">index_alt_name</span> <span class="o">=</span> <span class="n">citizens</span><span class="p">[</span><span class="s1">&#39;névváltozat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    
-    <span class="n">index_list</span> <span class="o">=</span> <span class="n">citizens</span><span class="p">[</span><span class="n">index_name</span><span class="p">]</span>
-    <span class="n">index_alt_list</span> <span class="o">=</span> <span class="n">citizens</span><span class="p">[</span><span class="n">index_alt_name</span><span class="p">]</span>
-    <span class="n">number_of_records</span> <span class="o">=</span>  <span class="nb">len</span><span class="p">(</span><span class="n">index_list</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_alt_list</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">number_of_records</span>
-        
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;sources/zipserbuch.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;alkalmi vezetéknevek&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
+<span class="n">TRESHOLD</span><span class="o">=</span><span class="mi">80</span>
+
+<span class="k">def</span> <span class="nf">find_in_names</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;igaz&#39;</span>
+        <span class="k">elif</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">ratio</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">TRESHOLD</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">fuzz</span><span class="o">.</span><span class="n">ratio</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%-o</span><span class="s1">s egyezés: &#39;</span> <span class="o">+</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="s1">&#39;hamis&#39;</span>
+
+
 <span class="n">list_of_names</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_1620</span><span class="p">:</span>
     <span class="n">record</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">record</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">find_in_citizen_records</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1620&#39;</span>
-    <span class="n">list_of_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_intersection</span><span class="p">:</span>
-    <span class="n">record</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">find_in_citizen_records</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
+    <span class="n">in_names</span> <span class="o">=</span> <span class="n">find_in_names</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;alkalmi listán&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">in_names</span>
+    <span class="k">if</span> <span class="n">in_names</span> <span class="o">!=</span> <span class="s1">&#39;igaz&#39;</span> <span class="ow">and</span> <span class="n">in_names</span> <span class="o">!=</span> <span class="s1">&#39;hamis&#39;</span><span class="p">:</span>
+        <span class="n">record</span><span class="p">[</span><span class="s1">&#39;alkalmi listán&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;kétséges&#39;</span>
+        <span class="n">record</span><span class="p">[</span><span class="s1">&#39;megjegyzés&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">in_names</span>
+
+        
+    <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_intersection</span><span class="p">:</span>
+        <span class="n">record</span><span class="p">[</span><span class="s1">&#39;év&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mindkettő&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">record</span><span class="p">[</span><span class="s1">&#39;év&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;csak 1620&#39;</span>
     <span class="n">list_of_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
     
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_1667</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_intersection</span><span class="p">:</span>
+        <span class="k">continue</span>
     <span class="n">record</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">record</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">find_in_citizen_records</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1667&#39;</span>
+    <span class="n">in_names</span> <span class="o">=</span> <span class="n">find_in_names</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;alkalmi listán&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">in_names</span>
+    <span class="k">if</span> <span class="n">in_names</span> <span class="o">!=</span> <span class="s1">&#39;igaz&#39;</span> <span class="ow">and</span> <span class="n">in_names</span> <span class="o">!=</span> <span class="s1">&#39;hamis&#39;</span><span class="p">:</span>
+        <span class="n">record</span><span class="p">[</span><span class="s1">&#39;alkalmi listán&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;kétséges&#39;</span>
+        <span class="n">record</span><span class="p">[</span><span class="s1">&#39;megjegyzés&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">in_names</span>
+    <span class="n">record</span><span class="p">[</span><span class="s1">&#39;év&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;csak 1667&#39;</span>
     <span class="n">list_of_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">list_of_names</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span>
+    <span class="n">HTML</span><span class="p">(</span>
+        <span class="s2">&quot;&lt;div style=&#39;height: 300px; overflow: auto; width: fit-content&#39;&gt;&quot;</span> <span class="o">+</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;/div&gt;&quot;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style='height: 300px; overflow: auto; width: fit-content'><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>alkalmi listán</th>
+      <th>év</th>
+      <th>megjegyzés</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Abscheimen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Abzieher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audrich</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bank</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bardt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Bartsch</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>83%-os egyezés: Barth</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Beck</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Beischitzer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Beitler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Bellersheim</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Belsius</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Bendik</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ber</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Berger</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Bernhard</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>89%-os egyezés: Bernhardus</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Bertholthy</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Beuchen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Birkesch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Bittner</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>83%-os egyezés: Biner</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Bobak</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Bobest</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Bogusch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Brauner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Bauer</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Braunn</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Brecz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Brehenzveig</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Breier</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Brewer</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Brenner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Bresler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Bretner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Briswitzer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Bron</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Brosian</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Brutoffszky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Buchbinder</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>82%-os egyezés: Buchner</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Buchwaldt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Burchardt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Buseker</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Clementis</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Cramer</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Czech</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Czek</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Deutsch</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>86%-os egyezés: Heutsch</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Dickau</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Dill</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Dingehirn</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Dirhans</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Ebling</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Eisenblöser</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Elbeinzer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Endersch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Engelhardt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Engelmann</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Ensigel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Erhardt</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Erhardi</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Ernst</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Eull</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Ezler</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Farkeschdorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Feierabendt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Feiner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>Figer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Figwer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Filiczky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>Finsterschein</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Firer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>Flachs</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>Fleischer</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>88%-os egyezés: Fischer</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Fröhlich</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>93%-os egyezés: Frölich</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>Furmann</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Garmein</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>Gebler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Genter</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Gerhardt</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>Gerliczer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Gerner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Werner</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>Glöcker</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>Gnersich</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>94%-os egyezés: Genersich</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Gnostius</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Goltschmidt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Grauscher</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Greifenstein</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Grezmacher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Gritner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Gartner</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Gro</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Gröff</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Gromada</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>Gronhok</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Grotker</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Gründel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Gurendel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Gurr</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Hagell</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>Hain</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Halasch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Hank</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Harnisch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Has</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Hedch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Heier</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>Heim</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Held</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>Heldner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>92%-os egyezés: Helner</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Helisch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Heller</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Helner</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>Hemerle</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Henkel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Henneman</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>Henrich</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Hentz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Hering</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>Hermelan</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>Hibner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>Hirscher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>Hirschhorn</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Hoffmann</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>Hoffrichter</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>Höllner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>Holsteiner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>Holzman</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>88%-os egyezés: Holtzmann</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>Homonnay</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Hondisch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>Höwer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>István</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>Jánosch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>Julisch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>Kaiser</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Kayser</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>Kaitscher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>Kalichbrier</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>Kalman</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>Karl</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>Kascher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>Kasser</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Kayser</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Kastner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>Katzwinkler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Keilhaw</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>Keleczenszky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Kemmel</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Keren</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Kettner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Kinster</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>Kirchdorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>Kischendorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>Kiszel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>Klein</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>Kleiner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Klein</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>Klem</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>Klisch</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Klesch</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>Klos</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>Klug</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>Kneftler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>Kohlhammer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>Köler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>Kordos</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>Kradt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>Krafft</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>Kraus</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>Kretzmar</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>Kreutzer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>Kromer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>Kronefinger</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Kroner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Croner</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>Krupich</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>Kubla</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>Kueffler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>Küffler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>Kumko</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>Kumpetz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>Kunisch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>Kunz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>Kurz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>Labada</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Lang</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>Laruck</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>Leibiczer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Leiblinger</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>Leipold</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>Lemel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>Lex</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>Lilg</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>Ludwich</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>Lumniczer</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>Luschmann</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Lux</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>Madel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Maier</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Markus</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Marschek</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Marcek</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Mauer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Meiland</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Melczer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Menersdorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Merbet</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Mesen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>Meszerschmidt</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>Metzel</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>92%-os egyezés: Meltzel</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>Midwischer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Mielek</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Miller</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Milleter</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>Miske</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>Moeschberger</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>Mosch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>Möse</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>Müllner</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>92%-os egyezés: Müller</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>Munkesch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>Muzius</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>Namesenszky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>Nass</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>208</th>
+      <td>Negel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>Neisser</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>210</th>
+      <td>Nemczig</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>Newpauer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>212</th>
+      <td>Neyleibner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>213</th>
+      <td>Nitsch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>214</th>
+      <td>Nonhart</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>215</th>
+      <td>Noska</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>216</th>
+      <td>Omes</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>Oswald</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>218</th>
+      <td>Otten</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>Paukesch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>Pelz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>Pelzner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>222</th>
+      <td>Peske</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>223</th>
+      <td>Péter</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>224</th>
+      <td>Péterl</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>225</th>
+      <td>Platner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>Plautscher</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>89%-os egyezés: Putscher</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>Polak</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>228</th>
+      <td>Poll</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>229</th>
+      <td>Polnisch</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>230</th>
+      <td>Polumszky</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>Post</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>89%-os egyezés: Pobst</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>Prasler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>233</th>
+      <td>Preloff</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>Probner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>Profandtbinder</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>Puts</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Putsch</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Putscher</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>Putscher</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>Raid</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>Rausch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>Rauschenbacher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>Reder</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>Reich</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>Reifenschierer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>Reis</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>89%-os egyezés: Regis</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>Reiter</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>Rettel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Rhoel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>Richter</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Rinel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Ripscher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>Rohtenstein</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Rosnauer</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Rosner</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>Roth</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Rothannsen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Roxer</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>Rudloff</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Rugner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>Rutter</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Reuter</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>Salzer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>Satler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>262</th>
+      <td>Scheffhirdt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>Scheiermann</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>91%-os egyezés: Schewermann</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>Schen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>Schenwisner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>Scherbchen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>267</th>
+      <td>Schiffer</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>268</th>
+      <td>Schilling</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>269</th>
+      <td>Schindler</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>82%-os egyezés: Schander</td>
+    </tr>
+    <tr>
+      <th>270</th>
+      <td>Schlachta</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>Schlaszky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>Schlesier</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>89%-os egyezés: Schleimer</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>Schlosser</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>Schmegner</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>Schmeiss</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>82%-os egyezés: Schmelius</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>Schmidt</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>277</th>
+      <td>Schmier</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>278</th>
+      <td>Schmol</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>Schneider</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>82%-os egyezés: Schander</td>
+    </tr>
+    <tr>
+      <th>280</th>
+      <td>Schneier</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>82%-os egyezés: Schleimer</td>
+    </tr>
+    <tr>
+      <th>281</th>
+      <td>Schnell</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>86%-os egyezés: Schnelk</td>
+    </tr>
+    <tr>
+      <th>282</th>
+      <td>Schnirell</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>283</th>
+      <td>Schnütz</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>92%-os egyezés: Schütz</td>
+    </tr>
+    <tr>
+      <th>284</th>
+      <td>Schober</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>285</th>
+      <td>Scholder</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>286</th>
+      <td>Scholtz</td>
+      <td>igaz</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>287</th>
+      <td>Schreiber</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>Schrepp</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>Schröser</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>290</th>
+      <td>Schurmenfeibeln</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>Schwab</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>Schwamberger</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>Schwarz</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>93%-os egyezés: Schwartz</td>
+    </tr>
+    <tr>
+      <th>294</th>
+      <td>Schwidrich</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>295</th>
+      <td>Seidenreich</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>Selichmann</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>Sewer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>Sigmond</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>Sissel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>Smolka</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>301</th>
+      <td>Sovencz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>302</th>
+      <td>Sovenicz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>Spannenkrebs</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>304</th>
+      <td>Sperendorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>305</th>
+      <td>Spillenberger</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>96%-os egyezés: Spilenberger</td>
+    </tr>
+    <tr>
+      <th>306</th>
+      <td>Springinsfeldt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>307</th>
+      <td>Stania</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>Steffen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>309</th>
+      <td>Stein</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>83%-os egyezés: Steiner</td>
+    </tr>
+    <tr>
+      <th>310</th>
+      <td>Steinbrunner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>311</th>
+      <td>Stellmacher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>312</th>
+      <td>Stengel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>Sterenseer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>Sterkenreif</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>315</th>
+      <td>Stoker</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>316</th>
+      <td>Strak</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>317</th>
+      <td>Sturm</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>Sumer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>319</th>
+      <td>Summer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>320</th>
+      <td>Szalay</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>321</th>
+      <td>Teibler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>Teschinszky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>323</th>
+      <td>Thaininger</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>Thierauff</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>Thill</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>Thobola</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>Tobisch</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>328</th>
+      <td>Tomko</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>329</th>
+      <td>Töpchin</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>330</th>
+      <td>Topkau</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>331</th>
+      <td>Topschmied</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>332</th>
+      <td>Treibenwaldt</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>Triebel</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>Tscheff</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>Tuk</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>Tükes</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>337</th>
+      <td>Türck</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>338</th>
+      <td>Umblauff</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>339</th>
+      <td>Unger</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>Urbanovitz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>341</th>
+      <td>Wagner</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>Waid</td>
+      <td>kétséges</td>
+      <td>csak 1620</td>
+      <td>89%-os egyezés: Waida</td>
+    </tr>
+    <tr>
+      <th>343</th>
+      <td>Waldforster</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>344</th>
+      <td>Wallendorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>345</th>
+      <td>Walowszky</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>346</th>
+      <td>Weinziehler</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>347</th>
+      <td>Wesserburg</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>348</th>
+      <td>Wezenbreier</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>349</th>
+      <td>Wildner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>350</th>
+      <td>Wildschitz</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>351</th>
+      <td>Winder</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>352</th>
+      <td>Windisch</td>
+      <td>igaz</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>353</th>
+      <td>Windschendorffer</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>354</th>
+      <td>Wisner</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>355</th>
+      <td>Wiswanger</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>Wittchen</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>357</th>
+      <td>Wolff</td>
+      <td>kétséges</td>
+      <td>mindkettő</td>
+      <td>89%-os egyezés: Wolf</td>
+    </tr>
+    <tr>
+      <th>358</th>
+      <td>Zehendner</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>359</th>
+      <td>Zeiner</td>
+      <td>hamis</td>
+      <td>mindkettő</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>360</th>
+      <td>Ziegelbrier</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>Zimmermann</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>Zirbes</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>363</th>
+      <td>Zwelticher</td>
+      <td>hamis</td>
+      <td>csak 1620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>364</th>
+      <td>Aaron</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>365</th>
+      <td>Abrachamides</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>366</th>
+      <td>Achband</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>Adam</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>89%-os egyezés: Adami</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>Adami</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>Adrián</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>Agnellides</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>Alauda</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>Alex</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>Aman</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>Amoeni</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Amoenius</td>
+    </tr>
+    <tr>
+      <th>375</th>
+      <td>Andrä</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>Aranyassy</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>377</th>
+      <td>Baumerth</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>378</th>
+      <td>Beeler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>379</th>
+      <td>Binder</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>91%-os egyezés: Biner</td>
+    </tr>
+    <tr>
+      <th>380</th>
+      <td>Binisch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>381</th>
+      <td>Blecher</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>Böckel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>383</th>
+      <td>Bohemus</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>384</th>
+      <td>Bohus</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>385</th>
+      <td>Bonis</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>386</th>
+      <td>Borsi</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>Bretz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>Brosko</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>Brüchenzweig</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>Buchwald</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>Burchhard</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>Christ</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>Clement</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>Coroda</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>Croner</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>Crudy</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>Czeklian</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>398</th>
+      <td>Czernack</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>399</th>
+      <td>Dankisch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>Demeter</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>401</th>
+      <td>Demián</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>402</th>
+      <td>Demiel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>403</th>
+      <td>Deschner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>82%-os egyezés: Greschner</td>
+    </tr>
+    <tr>
+      <th>404</th>
+      <td>Dirwa</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>405</th>
+      <td>Dobrowszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>406</th>
+      <td>Dönisch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>407</th>
+      <td>Donnersmarker</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>408</th>
+      <td>Drescher</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>82%-os egyezés: Greschner</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>Dürner</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>410</th>
+      <td>Eckhardt</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>411</th>
+      <td>Eisenbleser</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>412</th>
+      <td>Embst</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>413</th>
+      <td>Emerich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>414</th>
+      <td>Erckenberger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>415</th>
+      <td>Erger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>416</th>
+      <td>Ertl</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>417</th>
+      <td>Erythreus</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>95%-os egyezés: Erythraeus</td>
+    </tr>
+    <tr>
+      <th>418</th>
+      <td>Escherich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>419</th>
+      <td>Eyffler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>420</th>
+      <td>Fabian</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Fabini</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Fabritius</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>Fait</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Faszzieher</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Feix</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>425</th>
+      <td>Fialka</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>426</th>
+      <td>Finck</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>427</th>
+      <td>Fischber</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>93%-os egyezés: Fischer</td>
+    </tr>
+    <tr>
+      <th>428</th>
+      <td>Fischer</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>429</th>
+      <td>Fiwinger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>430</th>
+      <td>Fleischhakker</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Fleischhacker</td>
+    </tr>
+    <tr>
+      <th>431</th>
+      <td>Flox</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>432</th>
+      <td>Frank</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>Frantz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>Fräntzel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>435</th>
+      <td>Freystatzky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>436</th>
+      <td>Fuhrmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>437</th>
+      <td>Fürnstein</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>Fürst</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>Fux</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>Gärtner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Gartner</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>Genersich</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>442</th>
+      <td>Gereth</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>Geretsch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Gresch</td>
+    </tr>
+    <tr>
+      <th>444</th>
+      <td>Gerstner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>88%-os egyezés: Girstner</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>Gieschgall</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>446</th>
+      <td>Gietsch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>447</th>
+      <td>Glaser</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>Glatz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>Glätz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>Glöckner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>451</th>
+      <td>Glós</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>452</th>
+      <td>Gnartz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>453</th>
+      <td>Gnibisch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>93%-os egyezés: Gnibsch</td>
+    </tr>
+    <tr>
+      <th>454</th>
+      <td>Godol</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>455</th>
+      <td>Gölner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>Görgey</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>457</th>
+      <td>Gosnovitzer</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Gosnovicer</td>
+    </tr>
+    <tr>
+      <th>458</th>
+      <td>Gothmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>459</th>
+      <td>Götsch</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>460</th>
+      <td>Gräbner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Grebner</td>
+    </tr>
+    <tr>
+      <th>461</th>
+      <td>Graff</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>462</th>
+      <td>Gräntzer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>463</th>
+      <td>Graub</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>464</th>
+      <td>Gretzmacher</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>465</th>
+      <td>Grossmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>466</th>
+      <td>Grubisch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>467</th>
+      <td>Grünberger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>468</th>
+      <td>Günther</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>469</th>
+      <td>Gutsch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Götsch</td>
+    </tr>
+    <tr>
+      <th>470</th>
+      <td>Hamárak</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>471</th>
+      <td>Han</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Hain</td>
+    </tr>
+    <tr>
+      <th>472</th>
+      <td>Handler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>473</th>
+      <td>Hankotzy</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>474</th>
+      <td>Harhowszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>475</th>
+      <td>Hart</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>476</th>
+      <td>Haselinszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>477</th>
+      <td>Häufelmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>Hauk</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>89%-os egyezés: Hauck</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>Heensz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>Heesz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>481</th>
+      <td>Heibel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>Hellenriegel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>Heltdorffer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>484</th>
+      <td>Helux</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>485</th>
+      <td>Hensel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>486</th>
+      <td>Hentschger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>487</th>
+      <td>Hermann</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>Hertel</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>489</th>
+      <td>Hertzog</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>490</th>
+      <td>Heusei</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>491</th>
+      <td>Hofmann</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>93%-os egyezés: Hoffmann</td>
+    </tr>
+    <tr>
+      <th>492</th>
+      <td>Holetz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>Hollumniczer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>494</th>
+      <td>Hölner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Helner</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>Hönisch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>Hopgärtner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>Horait</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>Horanszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>Hornung</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>500</th>
+      <td>Horváth</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>Hundertmarker</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>502</th>
+      <td>Husz</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>503</th>
+      <td>Hutter</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>504</th>
+      <td>Huttnick</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>505</th>
+      <td>Jakob</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>506</th>
+      <td>Jäntner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>507</th>
+      <td>Jederfogt</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>508</th>
+      <td>Johan</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>509</th>
+      <td>John</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>510</th>
+      <td>Jopka</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>511</th>
+      <td>Kalmann</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Kulmann</td>
+    </tr>
+    <tr>
+      <th>512</th>
+      <td>Kaltenbrunner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>513</th>
+      <td>Kampel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>514</th>
+      <td>Karuh</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>515</th>
+      <td>Kaszel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>516</th>
+      <td>Katschier</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>84%-os egyezés: Ratschiger</td>
+    </tr>
+    <tr>
+      <th>517</th>
+      <td>Kaufmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>518</th>
+      <td>Keil</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>519</th>
+      <td>Keller</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>520</th>
+      <td>Kermann</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Hermann</td>
+    </tr>
+    <tr>
+      <th>521</th>
+      <td>Kern</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>522</th>
+      <td>Kernesz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>523</th>
+      <td>Ketschky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>524</th>
+      <td>Kilian</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>525</th>
+      <td>Kissick</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>526</th>
+      <td>Kliesch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Klesch</td>
+    </tr>
+    <tr>
+      <th>527</th>
+      <td>Klimbko</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>528</th>
+      <td>Klinger</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>82%-os egyezés: Keublinger</td>
+    </tr>
+    <tr>
+      <th>529</th>
+      <td>Klosz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>530</th>
+      <td>Knax</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>531</th>
+      <td>Kniesner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>93%-os egyezés: Knisner</td>
+    </tr>
+    <tr>
+      <th>532</th>
+      <td>Knobloch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>88%-os egyezés: Knoblach</td>
+    </tr>
+    <tr>
+      <th>533</th>
+      <td>Knöffler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>534</th>
+      <td>Koch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>535</th>
+      <td>Kochanick</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>536</th>
+      <td>Köhler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>537</th>
+      <td>Kolb</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>538</th>
+      <td>Korwath</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Corwath</td>
+    </tr>
+    <tr>
+      <th>539</th>
+      <td>Kosak</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>540</th>
+      <td>Kostlerus</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>541</th>
+      <td>Kosturka</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>542</th>
+      <td>Kovalszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>543</th>
+      <td>Krahl</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>544</th>
+      <td>Kratzer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>545</th>
+      <td>Krausz</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>91%-os egyezés: Kraus</td>
+    </tr>
+    <tr>
+      <th>546</th>
+      <td>Krautenfleisch</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>547</th>
+      <td>Kretschmer</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>548</th>
+      <td>Krohner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>549</th>
+      <td>Krompächer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>550</th>
+      <td>Krompholz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>551</th>
+      <td>Kübler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>552</th>
+      <td>Kulmann</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>553</th>
+      <td>Kuntz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>554</th>
+      <td>Kuntzmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>555</th>
+      <td>Kupferschmidt</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>556</th>
+      <td>Lamperich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>557</th>
+      <td>Lamprecht</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>558</th>
+      <td>Landinus</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>559</th>
+      <td>Lassota</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>560</th>
+      <td>Latzko</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>561</th>
+      <td>Lehnhardt</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>82%-os egyezés: Leonhart</td>
+    </tr>
+    <tr>
+      <th>562</th>
+      <td>Leibitzer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>563</th>
+      <td>Lepsch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>564</th>
+      <td>Letzelder</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>565</th>
+      <td>Lischka</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>566</th>
+      <td>Lorentz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>567</th>
+      <td>Luckel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>568</th>
+      <td>Mandel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>569</th>
+      <td>Marci</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>570</th>
+      <td>Máriássy</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>571</th>
+      <td>Martzel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>572</th>
+      <td>Massler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>573</th>
+      <td>Masur</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>574</th>
+      <td>Matern</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>575</th>
+      <td>Matz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>576</th>
+      <td>Mauksch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>577</th>
+      <td>Meerboth</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>578</th>
+      <td>Mees</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>579</th>
+      <td>Mehl</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>580</th>
+      <td>Meitzer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>581</th>
+      <td>Mentzel</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Meltzel</td>
+    </tr>
+    <tr>
+      <th>582</th>
+      <td>Mercatius</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>583</th>
+      <td>Merten</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>584</th>
+      <td>Meyerhöfer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>585</th>
+      <td>Michel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>586</th>
+      <td>Mickolai</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>587</th>
+      <td>Miklosch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>588</th>
+      <td>Misko</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>589</th>
+      <td>Morokovszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>590</th>
+      <td>Moticka</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>591</th>
+      <td>Müllenbächer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>592</th>
+      <td>Münnich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>593</th>
+      <td>Müntzner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>594</th>
+      <td>Musch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>595</th>
+      <td>Neehrer</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Neerer</td>
+    </tr>
+    <tr>
+      <th>596</th>
+      <td>Németh</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Nemeth</td>
+    </tr>
+    <tr>
+      <th>597</th>
+      <td>Nemtsik</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>598</th>
+      <td>Neter</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>599</th>
+      <td>Niklas</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Niclas</td>
+    </tr>
+    <tr>
+      <th>600</th>
+      <td>Novak</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>Novoszady</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>602</th>
+      <td>Novotni</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>603</th>
+      <td>Oelschläger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>604</th>
+      <td>Pangraczowszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>605</th>
+      <td>Pater</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>606</th>
+      <td>Paukisch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>607</th>
+      <td>Peltschner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>608</th>
+      <td>Peretz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>609</th>
+      <td>Peschkó</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>610</th>
+      <td>Péterle</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>611</th>
+      <td>Pfanschmied</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>612</th>
+      <td>Pfeiffer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>613</th>
+      <td>Pinxner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Pinner</td>
+    </tr>
+    <tr>
+      <th>614</th>
+      <td>Pless</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>615</th>
+      <td>Pletzner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>616</th>
+      <td>Polack</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>617</th>
+      <td>Porisch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Porsch</td>
+    </tr>
+    <tr>
+      <th>618</th>
+      <td>Prensdorfler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>619</th>
+      <td>Profant</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>620</th>
+      <td>Progner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>621</th>
+      <td>Pudleiner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>622</th>
+      <td>Pursch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Porsch</td>
+    </tr>
+    <tr>
+      <th>623</th>
+      <td>Puschkar</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>624</th>
+      <td>Putz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>625</th>
+      <td>Queck</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>626</th>
+      <td>Quitschwasser</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>627</th>
+      <td>Raab</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>628</th>
+      <td>Ratulovszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>629</th>
+      <td>Ratz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>630</th>
+      <td>Rauch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>631</th>
+      <td>Regius</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>91%-os egyezés: Regis</td>
+    </tr>
+    <tr>
+      <th>632</th>
+      <td>Reinprecht</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>633</th>
+      <td>Resch</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Reutsch</td>
+    </tr>
+    <tr>
+      <th>634</th>
+      <td>Reuter</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Reiter</td>
+    </tr>
+    <tr>
+      <th>635</th>
+      <td>Ries</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>89%-os egyezés: Riess</td>
+    </tr>
+    <tr>
+      <th>636</th>
+      <td>Ritter</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Reiter</td>
+    </tr>
+    <tr>
+      <th>637</th>
+      <td>Romann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>638</th>
+      <td>Romp</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>639</th>
+      <td>Rompauer</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>88%-os egyezés: Rampauer</td>
+    </tr>
+    <tr>
+      <th>640</th>
+      <td>Rosenberger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>641</th>
+      <td>Röthel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>642</th>
+      <td>Rump</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>643</th>
+      <td>Sagurda</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>644</th>
+      <td>Salich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>645</th>
+      <td>Sambo</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>646</th>
+      <td>Samborszky</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>647</th>
+      <td>Sandmann</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>648</th>
+      <td>Sauer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>649</th>
+      <td>Scheuermann</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>91%-os egyezés: Schewermann</td>
+    </tr>
+    <tr>
+      <th>650</th>
+      <td>Schin</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>651</th>
+      <td>Schlesinger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>652</th>
+      <td>Schmieger</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>89%-os egyezés: Schmegner</td>
+    </tr>
+    <tr>
+      <th>653</th>
+      <td>Schmietz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>654</th>
+      <td>Schnatner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>82%-os egyezés: Schander</td>
+    </tr>
+    <tr>
+      <th>655</th>
+      <td>Schöberchen</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>656</th>
+      <td>Scholcz</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Scholtz</td>
+    </tr>
+    <tr>
+      <th>657</th>
+      <td>Schönwiesner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>658</th>
+      <td>Schubert</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>659</th>
+      <td>Schüller</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>660</th>
+      <td>Schütz</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>661</th>
+      <td>Schwartz</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>662</th>
+      <td>Scultéti</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>663</th>
+      <td>Sebler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>664</th>
+      <td>Seidl</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>665</th>
+      <td>Selich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>666</th>
+      <td>Seltendaheim</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>667</th>
+      <td>Seltenreich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>668</th>
+      <td>Senovitz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>669</th>
+      <td>Sieger</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Simeger</td>
+    </tr>
+    <tr>
+      <th>670</th>
+      <td>Sinkenthaler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>671</th>
+      <td>Söldner</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>672</th>
+      <td>Sommer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>673</th>
+      <td>Sontag</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Sonntag</td>
+    </tr>
+    <tr>
+      <th>674</th>
+      <td>Span</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>675</th>
+      <td>Sperling</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>676</th>
+      <td>Sponer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>677</th>
+      <td>Stamb</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>678</th>
+      <td>Stanko</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Stanek</td>
+    </tr>
+    <tr>
+      <th>679</th>
+      <td>Steinbruner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>680</th>
+      <td>Steiner</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>681</th>
+      <td>Stenczel</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>682</th>
+      <td>Stephanides</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>84%-os egyezés: Stephani</td>
+    </tr>
+    <tr>
+      <th>683</th>
+      <td>Sternseher</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>684</th>
+      <td>Stockert</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>685</th>
+      <td>Stoszko</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>686</th>
+      <td>Straner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>687</th>
+      <td>Straszer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>688</th>
+      <td>Strauch</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>689</th>
+      <td>Strauf</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>690</th>
+      <td>Stück</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>691</th>
+      <td>Stütz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>692</th>
+      <td>Szegi</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>693</th>
+      <td>Szuchai</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>694</th>
+      <td>Täntzer</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>86%-os egyezés: Tentzer</td>
+    </tr>
+    <tr>
+      <th>695</th>
+      <td>Thisz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>696</th>
+      <td>Thrömer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>697</th>
+      <td>Thuell</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>698</th>
+      <td>Tiell</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>699</th>
+      <td>Tinusz</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>700</th>
+      <td>Toball</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>701</th>
+      <td>Tok</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>702</th>
+      <td>Töpffer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>703</th>
+      <td>Toppertzer</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>704</th>
+      <td>Trajanus</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>705</th>
+      <td>Treibenwald</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>706</th>
+      <td>Trentzik</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>707</th>
+      <td>Tsack</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>708</th>
+      <td>Tsech</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>709</th>
+      <td>Tsierner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>710</th>
+      <td>Turner</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>711</th>
+      <td>Tuschnack</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>712</th>
+      <td>Ulbrich</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>713</th>
+      <td>Unterbaum</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>714</th>
+      <td>Urmeister</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>715</th>
+      <td>Valten</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>716</th>
+      <td>Veit</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>717</th>
+      <td>Vesper</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>718</th>
+      <td>Vogler</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>719</th>
+      <td>Völgans</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>720</th>
+      <td>Vorberger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>721</th>
+      <td>Wachmann</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>88%-os egyezés: Wachsman</td>
+    </tr>
+    <tr>
+      <th>722</th>
+      <td>Wahn</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>723</th>
+      <td>Waida</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>724</th>
+      <td>Waltsgott</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>725</th>
+      <td>Waszerberger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>726</th>
+      <td>Wéber</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>727</th>
+      <td>Weiner</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>83%-os egyezés: Werner</td>
+    </tr>
+    <tr>
+      <th>728</th>
+      <td>Weinling</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>729</th>
+      <td>Weiszgerber</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>730</th>
+      <td>Wester</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>731</th>
+      <td>Wichten</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>732</th>
+      <td>Windt</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>733</th>
+      <td>Winkler</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>93%-os egyezés: Winckler</td>
+    </tr>
+    <tr>
+      <th>734</th>
+      <td>Wohn</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>735</th>
+      <td>Wolfgang</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>736</th>
+      <td>Wollschläger</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>737</th>
+      <td>Wüstemann</td>
+      <td>igaz</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>738</th>
+      <td>Zabler</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>92%-os egyezés: Zabeler</td>
+    </tr>
+    <tr>
+      <th>739</th>
+      <td>Zacherl</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>740</th>
+      <td>Zechmeister</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>741</th>
+      <td>Zeeman</td>
+      <td>kétséges</td>
+      <td>csak 1667</td>
+      <td>91%-os egyezés: Zeman</td>
+    </tr>
+    <tr>
+      <th>742</th>
+      <td>Zieboldt</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>743</th>
+      <td>Zipser</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>744</th>
+      <td>Zirbs</td>
+      <td>hamis</td>
+      <td>csak 1667</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">percentage</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;alkalmi listán&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;százalék&#39;</span><span class="p">)</span>
+<span class="n">percentage</span>
 </pre></div>
 </div>
 </div>
@@ -647,67 +5889,25 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>name</th>
-      <th>records</th>
-      <th>year</th>
+      <th>százalék</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>Abscheimen</td>
-      <td>0</td>
-      <td>1620</td>
+      <th>hamis</th>
+      <td>79.597315</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>Abzieher</td>
-      <td>0</td>
-      <td>1620</td>
+      <th>kétséges</th>
+      <td>13.557047</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>Audrich</td>
-      <td>0</td>
-      <td>1620</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bank</td>
-      <td>0</td>
-      <td>1620</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Bardt</td>
-      <td>0</td>
-      <td>1620</td>
+      <th>igaz</th>
+      <td>6.845638</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
-</div>
-<p>A következőben egy megjelenítőt készítünk az így létrejött adatstruktúrának.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;A nyomtatványok között leggyakrabban előforduló családnevek&quot;</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;A nyomtatványok között leggyakrabban előforduló családnevek&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;Styler&#39; object has no attribute &#39;head&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 
@@ -745,7 +5945,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">A lőcsei szászok alkalmi nyomtatványai</p>
+        <p class="prev-next-title">A lőcsei polgárság kapcsolattörténeti vizsgálata (1614-1670)</p>
       </div>
     </a>
 </div>
