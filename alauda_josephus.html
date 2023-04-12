@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Alauda, Josephus (1610 k.-1664)", "label": "Alauda, Josephus (1610 k.-1664)", "shape": "dot", "size": 10, "title": "Alauda, Josephus (1610 k.-1664)\nR\u00e9szt vett David Fr\u00f6lich \u00e9s Judith\nBertram esk\u00fcv\u0151j\u00e9n, valamint k\u00f6sz\u00f6nt\u0151\nverset \u00edrt. 1635-ben r\u00e9szt vett\nBartholomeus Alauda \u00e9s Susanna Lapscher\nmenyegz\u0151j\u00e9n. 1637-ben ismeretlen l\u0151csei\nszerz\u0151 alkalmi verseket \u00edrt hozz\u00e1.\n1638-ban Anton Lang hal\u00e1l\u00e1ra gy\u00e1szverset\n\u00edrt. 1640-ben verset \u00edrt Johann Windisch\n\u00e9s Susanna Zabeler esk\u00fcv\u0151j\u00e9re. 1642-ben\nk\u00f6sz\u00f6nt\u0151t \u00edrt Peter Zabeler \u00e9s Marta\nGoltz esk\u00fcv\u0151j\u00e9re. 1647-ben verset \u00edrt\nChristoph Schlegel beiktat\u00e1sa\nalkalm\u00e1b\u00f3l. 1648-ban verset \u00edrt\nChristoph Schlegel \u00e9s Rosina Gloger\nlakodalm\u00e1ra. Lakodalmi k\u00f6sz\u00f6nt\u0151t \u00edrt\nHiob Zabeler l\u0151csei rektor \u00e9s Margareta\nMilleter 1651-ben tartott esk\u00fcv\u0151j\u00e9re.\n1653-ban k\u00f6sz\u00f6nt\u0151t \u00edrt Horv\u00e1th M\u00e1rk \u00e9s\nM\u00e1ri\u00e1ssy Krisztina lakodalm\u00e1ra. 1658\nj\u00fanius 2-\u00e1n k\u00f6sz\u00f6nt\u0151 verset \u00edrt\nChristoph B\u00f6hm els\u0151pap beiktat\u00e1sa\nalkalm\u00e1b\u00f3l. 1662-ben k\u00f6sz\u00f6nt\u0151 verset \u00edrt\nJohannes Serpilius III. \u00e9s Dorothea\nSophia Baldwin esk\u00fcv\u0151j\u00e9re. L\u00e1nya Susanna\nAlauda, aki 1663-ban hozz\u00e1ment ifj.\nG\u00fcnther Andr\u00e1shoz. Az esk\u00fcv\u0151re k\u00f6sz\u00f6nt\u0151t\n\u00edrt."}, {"color": "#97c2fc", "id": "Fr\u00f6lich, David (1595-1648)", "label": "Fr\u00f6lich, David (1595-1648)", "shape": "dot", "size": 10, "title": "Fr\u00f6lich, David (1595-1648)\n1635-ben feles\u00e9g\u00fcl veszi Judith Bertram-\not ( Bartholomeus Bertram l\u00e1nya).\n1648-ban hal meg, tud\u00f3s bar\u00e1tai\ngy\u00e1szverseket \u00edrnak hozz\u00e1."}, {"color": "#97c2fc", "id": "Bertram, Judith (?-?)", "label": "Bertram, Judith (?-?)", "shape": "dot", "size": 10, "title": "Bertram, Judith (?-?)\n1635-ben hozz\u00e1megy David Fr\u00f6lich neves\ncsillag\u00e1szhoz. Apja Bartholomeus\nBertram."}, {"color": "#97c2fc", "id": "Alauda, Bartholomeus (?-?)", "label": "Alauda, Bartholomeus (?-?)", "shape": "dot", "size": 10, "title": "Alauda, Bartholomeus (?-?)\n1635-ben elvette Susanna Lapschert,\nAndreas Hertel kisszebeni tan\u00e1csos \u00e9s\njegyz\u0151 l\u00e1ny\u00e1t. 1637-ben ismeretlen\nl\u0151csei szerz\u0151 alkalmi verseket \u00edrt\nhozz\u00e1. 1643-ban Martin Tarn\u00f3ci\nb\u00facs\u00faverset \u00edrt hozz\u00e1, amikor\nWittenbergbe t\u00e1vozott. 1659-ben\ngy\u00e1szverset \u00edrt David Genersich l\u0151csei\ntan\u00e1csos hal\u00e1l\u00e1ra."}, {"color": "#97c2fc", "id": "Lapscher, Susanna (?-?)", "label": "Lapscher, Susanna (?-?)", "shape": "dot", "size": 10, "title": "Lapscher, Susanna (?-?)\nAndreas Hertel mostohal\u00e1nya, 1635-t\u0151l\nBartholomeus Alauda feles\u00e9ge."}, {"color": "#97c2fc", "id": "Lang, Anton (1617-1638)", "label": "Lang, Anton (1617-1638)", "shape": "dot", "size": 10, "title": "Lang, Anton (1617-1638)\nJohann Lang fia \u00e9s Catharina Lang\ntestv\u00e9re. 1638 m\u00e1rcius 5-\u00e9n halt meg,\nhal\u00e1l\u00e1ra gy\u00e1szverseket \u00edrtak a l\u0151csei\niskola tan\u00e1rai."}, {"color": "#97c2fc", "id": "Windisch, Johann (1605-1672)", "label": "Windisch, Johann (1605-1672)", "shape": "dot", "size": 10, "title": "Windisch, Johann (1605-1672)\nR\u00e9szt vett David Fr\u00f6lich \u00e9s Judith\nBertram esk\u00fcv\u0151j\u00e9n, valamint k\u00f6sz\u00f6nt\u0151\nverset \u00edrt. K\u00f6sz\u00f6nt\u0151 verset \u00edrt\nBartholomeus Alauda \u00e9s Susanna Lapscher\nesk\u00fcv\u0151j\u00e9re. K\u00f6sz\u00f6nt\u0151t \u00edrt Thomas Ficker\n\u00e9s Catharina Lang esk\u00fcv\u0151j\u00e9re is.\n1637-ben ismeretlen l\u0151csei szerz\u0151\nalkalmi verseket \u00edrt hozz\u00e1. 1638-ban\nAnton Lang hal\u00e1l\u00e1ra gy\u00e1szverset \u00edrt.\n1640-ben elveszi Peter Zabeler l\u00e1ny\u00e1t,\nSusann\u00e1t. 1642-ben k\u00f6sz\u00f6nt\u0151 verset \u00edrt\nSamuel D\u00fcrner \u00e9s Dorothea Fabini\nesk\u00fcv\u0151j\u00e9re. 1643-ban Martin Tarn\u00f3ci\nb\u00facs\u00faverset \u00edrt hozz\u00e1, amikor\nWittenbergbe t\u00e1vozott.  1651-ben\nlakodalmi k\u00f6sz\u00f6nt\u0151t \u00edrt Hiob Zabeler\nl\u0151csei rektor \u00e9s Margareta Milleter\nesk\u00fcv\u0151j\u00e9re. 1659-ben lakodalmi verset\n\u00edrt David Spielenberger \u00e9s Susanna\nRegina h\u00e1zass\u00e1gk\u00f6t\u00e9s\u00e9re. 1665-ben\nk\u00f6sz\u00f6nt\u00f6tte Christian Seelmannt a l\u0151csei\nbeiktat\u00e1sa alkalm\u00e1b\u00f3l."}, {"color": "#97c2fc", "id": "Zabeler, Susanna (?-?)", "label": "Zabeler, Susanna (?-?)", "shape": "dot", "size": 10, "title": "Zabeler, Susanna (?-?)\nPeter Zabeler l\u00e1nya. 1640-ben hozz\u00e1megy\nJohann Windischhez."}, {"color": "#97c2fc", "id": "Zabeler, Peter id. (1578-1645)", "label": "Zabeler, Peter id. (1578-1645)", "shape": "dot", "size": 10, "title": "Zabeler, Peter id. (1578-1645)\nWittenbergi magiszteri c\u00edmmel j\u00f6tt\nKass\u00e1ra, majd L\u0151cs\u00e9re, ahol evang\u00e9likus\nels\u0151 lelk\u00e9sz \u00e9s az \u00e9szak-magyarorsz\u00e1gi\nv\u00e1rosok superintendense volt.\nN\u00e9metorsz\u00e1gb\u00f3l sz\u00e1rmazott. Eml\u00edt\u00e9sre\nker\u00fcl Matthaeus Saxo k\u00f6nyv\u00e9ben (1629).\n1637-ben ismeretlen l\u0151csei szerz\u0151\nalkalmi verseket \u00edrt hozz\u00e1. 1640-ben\nverset \u00edrt Johann Windisch \u00e9s Susanna\nZabeler esk\u00fcv\u0151j\u00e9re. 1642-ben eml\u00edt\u00e9sre\nker\u00fcl a beszterceb\u00e1nyai evang\u00e9likus\niskola vizsgat\u00e9telei kapcs\u00e1n. 1642-ben\nfeles\u00e9g\u00fcl veszi Marta Goltzt. 1643-ban\nMartin Tarn\u00f3ci b\u00facs\u00faverset \u00edrt hozz\u00e1,\namikor Wittenbergbe t\u00e1vozott."}, {"color": "#97c2fc", "id": "Goltz, Marta (?-?)", "label": "Goltz, Marta (?-?)", "shape": "dot", "size": 10, "title": "Goltz, Marta (?-?)\n1642-ben feles\u00e9g\u00fcl megy id. Peter\nZabelerhez."}, {"color": "#97c2fc", "id": "Schlegel, Christoph (1613-1678)", "label": "Schlegel, Christoph (1613-1678)", "shape": "dot", "size": 10, "title": "Schlegel, Christoph (1613-1678)\nLipcs\u00e9ben, J\u00e9n\u00e1ban, Wittenbergben\ntanult. 1638-t\u00f3l Boroszl\u00f3ban volt\nevang\u00e9likus lelk\u00e9sz \u00e9s tan\u00e1r. 1647-ben\nh\u00edvt\u00e1k meg l\u0151csei lelk\u00e9sznek.\n[RMNy2184]. Beiktat\u00e1s\u00e1ra t\u00f6bben \u00edrtak\nk\u00f6sz\u00f6nt\u0151 verset.  1647-ben Johannes\nLang, l\u0151csei b\u00edr\u00f3 hal\u00e1la alkalm\u00e1b\u00f3l\ngy\u00e1szverset \u00edrt. 1648-ban feles\u00e9g\u00fcl\nvette Rosina Glogert, Christophorus\nGloger, boroszl\u00f3i keresked\u0151 le\u00e1ny\u00e1t.\n1649-ben gy\u00e1szbesz\u00e9det mondott az\nelhunyt Friedrich Pobst f\u00f6l\u00f6tt. 1651-ben\nlakodalmi k\u00f6sz\u00f6nt\u0151t \u00edrt Hiob Zabeler\nl\u0151csei rektor \u00e9s Margareta Milleter\nesk\u00fcv\u0151j\u00e9re. 1656-ban panaszt tett a\nv\u00e1rosra, de kig\u00fanyolt\u00e1k, mert\nszat\u00f3cskodott a sz\u00f6vettel, lovakkal,\nb\u0151rrel, szappannal, \u00e9s az egyh\u00e1zat a\nm\u00e1sodik helyre tette. 1656-ban lek\u00f6sz\u00f6nt\n\u00e9s Boroszl\u00f3ba utazott."}, {"color": "#97c2fc", "id": "Gloger, Rosina (?-?)", "label": "Gloger, Rosina (?-?)", "shape": "dot", "size": 10, "title": "Gloger, Rosina (?-?)\nChristophorus Gloger boroszl\u00f3i polg\u00e1r \u00e9s\nkeresked\u0151 l\u00e1nya, 1648-ban feles\u00e9g\u00fcl ment\nChristoph Schlegel, l\u0151csei\nlelkip\u00e1sztorhoz."}, {"color": "#97c2fc", "id": "Zabeler, Hiob (1628\u20131664)", "label": "Zabeler, Hiob (1628\u20131664)", "shape": "dot", "size": 10, "title": "Zabeler, Hiob (1628\u20131664)\nPeter Zabeler evang\u00e9likus\nszuperintendens fia. L\u0151cs\u00e9n \u00e9s Zsoln\u00e1n,\nmajd a wittenbergi egyetemen tanult,\nahol a magiszteri fokozatot nyerte el.\nHazat\u00e9rve 1650-t\u0151l L\u0151cs\u00e9n rektor,\n1652-t\u0151l archidiak\u00f3nus, 1662-t\u0151l a\nl\u0151csei evang\u00e9likus egyh\u00e1z els\u0151 lelk\u00e9sze.\nAz 1664-es pestisj\u00e1rv\u00e1nyban halt meg.\n[RMNy 2929] 1648-ban verset \u00edrt\nChristoph Schlegel \u00e9s Rosina Gloger\nlakodalm\u00e1ra. 1651-ben feles\u00e9g\u00fcl vette\nMargareta Milletert, Georgius Milleter\nszepesi gr\u00f3f l\u00e1ny\u00e1t. Az esk\u00fcv\u0151re t\u00f6bb\nnyomtatv\u00e1ny is k\u00e9sz\u00fclt. 1660-ban\nChristoph B\u00f6hm hal\u00e1l\u00e1ra gy\u00e1szverset \u00edrt.\n1662-ben k\u00f6sz\u00f6nt\u0151 verset \u00edrt Johannes\nSerpilius III. \u00e9s Dorothea Sophia\nBaldwin esk\u00fcv\u0151j\u00e9re. 1664-ben\n\u00fajrah\u00e1zasodott, Maria Andreae-t vette\nfeles\u00e9g\u00fcl."}, {"color": "#97c2fc", "id": "Milleter, Margareta (?-?)", "label": "Milleter, Margareta (?-?)", "shape": "dot", "size": 10, "title": "Milleter, Margareta (?-?)\nGeorgius Milleter szepesi gr\u00f3f l\u00e1nya,\n1651-ben feles\u00e9g\u00fcl ment Hiob Zabelerhez.\n1667-ben val\u00f3sz\u00edn\u0171leg nem \u00e9l, nem\nszerepel apja gy\u00e1sznyomtatv\u00e1ny\u00e1ban."}, {"color": "#97c2fc", "id": "Horv\u00e1th M\u00e1rk (?-?)", "label": "Horv\u00e1th M\u00e1rk (?-?)", "shape": "dot", "size": 10, "title": "Horv\u00e1th M\u00e1rk (?-?)\n1653-ban feles\u00e9g\u00fcl vette M\u00e1ri\u00e1ssy\nZs\u00f3fi\u00e1t."}, {"color": "#97c2fc", "id": "M\u00e1ri\u00e1ssy Zs\u00f3fia (?-?)", "label": "M\u00e1ri\u00e1ssy Zs\u00f3fia (?-?)", "shape": "dot", "size": 10, "title": "M\u00e1ri\u00e1ssy Zs\u00f3fia (?-?)\n1653-ban feles\u00e9g\u00fcl ment Horv\u00e1th M\u00e1rkhoz."}, {"color": "#97c2fc", "id": "B\u00f6hm, Christoph (1626-1660)", "label": "B\u00f6hm, Christoph (1626-1660)", "shape": "dot", "size": 10, "title": "B\u00f6hm, Christoph (1626-1660)\n1658 j\u00fanius 2-\u00e1n iktatt\u00e1k be, t\u00f6bb\nk\u00f6sz\u00f6nt\u0151 vers sz\u00fcletett az esem\u00e9nyre.\n1660 m\u00e1rcius 19-\u00e9n hunyt el, hal\u00e1l\u00e1ra\ngy\u00e1szverseket \u00edrtak. A besz\u00e9det\nlelk\u00e9szt\u00e1rsa, Hiob Zabeler mondta."}, {"color": "#97c2fc", "id": "Baldwin, Dorothea Sophia (?-?)", "label": "Baldwin, Dorothea Sophia (?-?)", "shape": "dot", "size": 10, "title": "Baldwin, Dorothea Sophia (?-?)\nChristoph B\u00f6hm feles\u00e9ge. 1660-ban\nszerepel Christoph B\u00f6hm\ngy\u00e1szk\u00f6ltem\u00e9ny\u00e9ben, melyet Hiob Zabeler\nszerzett. 1662-ben \u00fajrah\u00e1zasodott\nSerpilius, Johannes III.-al."}, {"color": "#97c2fc", "id": "Serpilius, Johannes III. (1623-1686)", "label": "Serpilius, Johannes III. (1623-1686)", "shape": "dot", "size": 10, "title": "Serpilius, Johannes III. (1623-1686)\nM\u00e1ri\u00e1ssy J\u00e1nos \u00e9s Palugyai Zs\u00f3fia\nmenyegz\u0151j\u00e9n vesz r\u00e9szt. 1662-ben\nfeles\u00e9g\u00fcl veszi Dorothea Sophia\nBaldwint, Christoph B\u00f6hm \u00f6zvegy\u00e9t."}, {"color": "#97c2fc", "id": "G\u00fcnther Andr\u00e1s ifj. (?-?)", "label": "G\u00fcnther Andr\u00e1s ifj. (?-?)", "shape": "dot", "size": 10, "title": "G\u00fcnther Andr\u00e1s ifj. (?-?)\n1663-ban feles\u00e9g\u00fcl vette Susanna\nAlaud\u00e1t, Josephus Alauda l\u00e1ny\u00e1t.\n1670-ben k\u00f6sz\u00f6nt\u0151 verset \u00edr Bartholomeus\nAlauda II. \u00e9s Catharina Cramer\nesk\u00fcv\u0151j\u00e9re."}, {"color": "#97c2fc", "id": "Alauda, Susanna (?-?)", "label": "Alauda, Susanna (?-?)", "shape": "dot", "size": 10, "title": "Alauda, Susanna (?-?)\nJosephus Alauda l\u00e1nya, 1663-ban\nfeles\u00e9g\u00fcl ment ifj. G\u00fcnther Andr\u00e1shoz."}, {"color": "#97c2fc", "id": "Ismeretlen szerz\u0151 I. (?-?)", "label": "Ismeretlen szerz\u0151 I. (?-?)", "shape": "dot", "size": 10, "title": "Ismeretlen szerz\u0151 I. (?-?)\nM\u0171velt szerz\u0151, k\u00f6szv\u00e9ny miatt pihen\u00e9sre\nk\u00e9nyszer\u00edtve \u00edrt verseket l\u0151csei\npolg\u00e1rokhoz, de mag\u00e1t nem nevezte meg."}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1622, "sender_id": 13, "target_id": 150, "title": "1622\nLakodalmi k\u00f6sz\u00f6nt\u0151 versek David Fr\u00f6lich \u00e9s Judith Bertram menyegz\u0151j\u00e9re\nt\u00f6bb szerz\u0151t\u0151l. 1635.", "to": "Fr\u00f6lich, David (1595-1648)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1622, "sender_id": 13, "target_id": 41, "title": "1622\nLakodalmi k\u00f6sz\u00f6nt\u0151 versek David Fr\u00f6lich \u00e9s Judith Bertram menyegz\u0151j\u00e9re\nt\u00f6bb szerz\u0151t\u0151l. 1635.", "to": "Bertram, Judith (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1625, "sender_id": 13, "target_id": 11, "title": "1625\nBartholomeus Alauda, a l\u0151csei szlov\u00e1k evang\u00e9likusok lelkip\u00e1sztor\u00e1nak\n\u00e9s Andreas Hertel, kisszebeni tan\u00e1csos \u00e9s jegyz\u0151 Susanna Lapscher nev\u0171\nmostohal\u00e1ny\u00e1nak menyegz\u0151je alkalm\u00e1val k\u00e9sz\u00fclt.", "to": "Alauda, Bartholomeus (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1625, "sender_id": 13, "target_id": 300, "title": "1625\nBartholomeus Alauda, a l\u0151csei szlov\u00e1k evang\u00e9likusok lelkip\u00e1sztor\u00e1nak\n\u00e9s Andreas Hertel, kisszebeni tan\u00e1csos \u00e9s jegyz\u0151 Susanna Lapscher nev\u0171\nmostohal\u00e1ny\u00e1nak menyegz\u0151je alkalm\u00e1val k\u00e9sz\u00fclt.", "to": "Lapscher, Susanna (?-?)", "width": 1}, {"arrows": "to", "color": "black", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1731, "sender_id": 13, "target_id": 286, "title": "1731\nA verseket Anton L\u00e1ng hal\u00e1la alkalm\u00e1b\u00f3l \u00edrt\u00e1k a l\u0151csei iskola tan\u00e1rai.", "to": "Lang, Anton (1617-1638)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1837, "sender_id": 13, "target_id": 586, "title": "1837\nAz esk\u00fcv\u0151t 1640. november 4-\u00e9n tartott\u00e1k, a k\u00f6sz\u00f6nt\u0151 versek \u00edr\u00f3i a\nl\u0151csei iskola tan\u00e1rai \u00e9s tanul\u00f3i.", "to": "Windisch, Johann (1605-1672)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1837, "sender_id": 13, "target_id": 599, "title": "1837\nAz esk\u00fcv\u0151t 1640. november 4-\u00e9n tartott\u00e1k, a k\u00f6sz\u00f6nt\u0151 versek \u00edr\u00f3i a\nl\u0151csei iskola tan\u00e1rai \u00e9s tanul\u00f3i.", "to": "Zabeler, Susanna (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1936, "sender_id": 13, "target_id": 597, "title": "1936\nA k\u00f6ltem\u00e9nyek Peter Zabeler \u00e9s Marta Goltz 1642. november 2-\u00e1n tartott\nesk\u00fcv\u0151j\u00e9re k\u00e9sz\u00fcltek.", "to": "Zabeler, Peter id. (1578-1645)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 1936, "sender_id": 13, "target_id": 174, "title": "1936\nA k\u00f6ltem\u00e9nyek Peter Zabeler \u00e9s Marta Goltz 1642. november 2-\u00e1n tartott\nesk\u00fcv\u0151j\u00e9re k\u00e9sz\u00fcltek.", "to": "Goltz, Marta (?-?)", "width": 1}, {"arrows": "to", "color": "red", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2177, "sender_id": 13, "target_id": 469, "title": "2177\n1647-ben \u00edrt \u00fcdv\u00f6zl\u0151 versek Christoph Schlegel beiktat\u00e1sa alkalm\u00e1b\u00f3l.\n(Els\u0151 pap)", "to": "Schlegel, Christoph (1613-1678)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2232, "sender_id": 13, "target_id": 469, "title": "2232\nChristoph Schlegel \u00e9s Rosina Gloger 1648 okt\u00f3ber 25-\u00e9n tartott\nesk\u00f6v\u0151j\u00e9re k\u00e9sz\u00fclt k\u00f6sz\u00f6nt\u0151 versek.", "to": "Schlegel, Christoph (1613-1678)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2232, "sender_id": 13, "target_id": 169, "title": "2232\nChristoph Schlegel \u00e9s Rosina Gloger 1648 okt\u00f3ber 25-\u00e9n tartott\nesk\u00f6v\u0151j\u00e9re k\u00e9sz\u00fclt k\u00f6sz\u00f6nt\u0151 versek.", "to": "Gloger, Rosina (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2374, "sender_id": 13, "target_id": 596, "title": "2374\nA lakodalmi k\u00f6sz\u00f6nt\u0151 versek Hiob Zabeler l\u0151csei rektor \u00e9s Margareta\nMilleter (Georgius Milleter, szepesi gr\u00f3f l\u00e1nya) 1651-ben tartott\nesk\u00fcv\u0151j\u00e9re k\u00e9sz\u00fcltek.", "to": "Zabeler, Hiob (1628\u20131664)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2374, "sender_id": 13, "target_id": 352, "title": "2374\nA lakodalmi k\u00f6sz\u00f6nt\u0151 versek Hiob Zabeler l\u0151csei rektor \u00e9s Margareta\nMilleter (Georgius Milleter, szepesi gr\u00f3f l\u00e1nya) 1651-ben tartott\nesk\u00fcv\u0151j\u00e9re k\u00e9sz\u00fcltek.", "to": "Milleter, Margareta (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2469, "sender_id": 13, "target_id": 227, "title": "2469\nA kiadv\u00e1ny  Horv\u00e1th M\u00e1rk \u00e9s M\u00e1ri\u00e1ssy Zs\u00f3fia h\u00e1zass\u00e1gk\u00f6t\u00e9s\u00e9re k\u00e9sz\u00fclt\n1653. febru\u00e1r 9-\u00e9n.", "to": "Horv\u00e1th M\u00e1rk (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2469, "sender_id": 13, "target_id": 333, "title": "2469\nA kiadv\u00e1ny  Horv\u00e1th M\u00e1rk \u00e9s M\u00e1ri\u00e1ssy Zs\u00f3fia h\u00e1zass\u00e1gk\u00f6t\u00e9s\u00e9re k\u00e9sz\u00fclt\n1653. febru\u00e1r 9-\u00e9n.", "to": "M\u00e1ri\u00e1ssy Zs\u00f3fia (?-?)", "width": 1}, {"arrows": "to", "color": "red", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 2777, "sender_id": 13, "target_id": 46, "title": "2777\nA k\u00f6ltem\u00e9nyekkel Christoph B\u00f6hm\u00f6t, a l\u0151csei evang\u00e9likus gy\u00fclekezet \u00faj\nels\u0151papj\u00e1t k\u00f6sz\u00f6nt\u00f6tt\u00e9k hivatal\u00e1ba val\u00f3 beiktat\u00e1sa alkalm\u00e1b\u00f3l. 1658\nj\u00fanius 2.", "to": "B\u00f6hm, Christoph (1626-1660)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 3040, "sender_id": 13, "target_id": 26, "title": "3040\nChristoph B\u00f6hm \u00f6zvegye, Dorothea Sophia Baldwin k\u00e9t \u00e9v ut\u00e1n\n\u00fajrah\u00e1zasodott, Serpilius, Johannes III.  vette feles\u00e9g\u00fcl. A k\u00f6sz\u00f6nt\u0151\nversek az 1662 febru\u00e1r 14-\u00e9n tartott lakodalomra sz\u00fclettek.", "to": "Baldwin, Dorothea Sophia (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 3040, "sender_id": 13, "target_id": 502, "title": "3040\nChristoph B\u00f6hm \u00f6zvegye, Dorothea Sophia Baldwin k\u00e9t \u00e9v ut\u00e1n\n\u00fajrah\u00e1zasodott, Serpilius, Johannes III.  vette feles\u00e9g\u00fcl. A k\u00f6sz\u00f6nt\u0151\nversek az 1662 febru\u00e1r 14-\u00e9n tartott lakodalomra sz\u00fclettek.", "to": "Serpilius, Johannes III. (1623-1686)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 3085, "sender_id": 13, "target_id": 198, "title": "3085\nifj. G\u00fcnther Andr\u00e1s \u00e9s Susanna Alauda, Josephus Alauda l\u00e1ny\u00e1nak\nesk\u00fcv\u0151je alkalm\u00e1b\u00f3l megjelent kiadv\u00e1ny. (1.)", "to": "G\u00fcnther Andr\u00e1s ifj. (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 3106, "sender_id": 13, "target_id": 198, "title": "3106\nifj. G\u00fcnther Andr\u00e1s \u00e9s Susanna Alauda, Josephus Alauda l\u00e1ny\u00e1nak\nesk\u00fcv\u0151je alkalm\u00e1b\u00f3l megjelent kiadv\u00e1ny. (3.)", "to": "G\u00fcnther Andr\u00e1s ifj. (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 3085, "sender_id": 13, "target_id": 14, "title": "3085\nifj. G\u00fcnther Andr\u00e1s \u00e9s Susanna Alauda, Josephus Alauda l\u00e1ny\u00e1nak\nesk\u00fcv\u0151je alkalm\u00e1b\u00f3l megjelent kiadv\u00e1ny. (1.)", "to": "Alauda, Susanna (?-?)", "width": 1}, {"arrows": "to", "color": "purple", "from": "Alauda, Josephus (1610 k.-1664)", "record_id": 3106, "sender_id": 13, "target_id": 14, "title": "3106\nifj. G\u00fcnther Andr\u00e1s \u00e9s Susanna Alauda, Josephus Alauda l\u00e1ny\u00e1nak\nesk\u00fcv\u0151je alkalm\u00e1b\u00f3l megjelent kiadv\u00e1ny. (3.)", "to": "Alauda, Susanna (?-?)", "width": 1}, {"arrows": "to", "color": "blue", "from": "Ismeretlen szerz\u0151 I. (?-?)", "record_id": 1681, "sender_id": 234, "target_id": 13, "title": "1681\nA m\u0171velt szerz\u0151 k\u00f6szv\u00e9ny miatt pihen\u00e9sre k\u00e9nyszer\u00edtve \u00edrt verseket\nl\u0151csei polg\u00e1rokhoz, de mag\u00e1t nem nevezte meg.", "to": "Alauda, Josephus (1610 k.-1664)", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
