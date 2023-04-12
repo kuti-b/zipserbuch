@@ -17,13 +17,59 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-A következőkben az adattáblák kapcsolatait felhasználva tetszőleges személyek karrierútját és kapcsolathálóját vázolhatjuk fel.
+def get_relations_of_person(name):
+    person_df = relations_df[relations_df.applymap(lambda x: name in str(x)).any(1)]
+    df3=pandas.merge(person_df, records, left_on="record_id",right_on="RMNy")
+    grouped_by_record_id = df3.groupby('record_id').groups
+
+
+    chronology = []
+    for record_id in grouped_by_record_id:
+        new_item={}
+        new_item['id'] = record_id
+        new_item['kapcsolat'] = ''
+        for id in grouped_by_record_id[record_id]:
+            item = df3.iloc[id]
+            new_item['év'] = item['év']
+            new_item['esemény'] = item['esemény']
+            new_item['a nyomtatvány rövid leírása'] = item['a nyomtatvány rövid leírása']
+            if item['sender_name']==name:
+                new_item['irány']='küldő'
+                new_item['kapcsolat']+=item['target_name']+'; '
+            elif item['target_name']==name:
+                new_item['irány']='fogadó'
+                new_item['kapcsolat']+=item['sender_name']+'; '   
+        chronology.append(new_item)
+    
+    return pandas.DataFrame.from_records(chronology)
+    
+    
+    
+name = 'Seelmann, Christian (1626-1675/76)'
+chronology_df = get_relations_of_person(name)
+
+display(
+    HTML(
+        "<h3>"+ name + " lőcsei kapcsolatai: </h3><br><div style='height: 300px; overflow: auto; width: fit-content'>" +
+        chronology_df[['év', 'irány', 'esemény', 'kapcsolat', 'id', 'a nyomtatvány rövid leírása',]].sort_values('év').to_html() +
+        "</div>"
+    )
+)
 ------------------
 
-[0;36m  Cell [0;32mIn[8], line 1[0;36m[0m
-[0;31m    A következőkben az adattáblák kapcsolatait felhasználva tetszőleges személyek karrierútját és kapcsolathálóját vázolhatjuk fel.[0m
-[0m      ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[8], line 33[0m
+[1;32m     29[0m name [38;5;241m=[39m [38;5;124m'[39m[38;5;124mSeelmann, Christian (1626-1675/76)[39m[38;5;124m'[39m
+[1;32m     30[0m chronology_df [38;5;241m=[39m get_relations_of_person(name)
+[1;32m     32[0m display(
+[0;32m---> 33[0m     [43mHTML[49m(
+[1;32m     34[0m         [38;5;124m"[39m[38;5;124m<h3>[39m[38;5;124m"[39m[38;5;241m+[39m name [38;5;241m+[39m [38;5;124m"[39m[38;5;124m lőcsei kapcsolatai: </h3><br><div style=[39m[38;5;124m'[39m[38;5;124mheight: 300px; overflow: auto; width: fit-content[39m[38;5;124m'[39m[38;5;124m>[39m[38;5;124m"[39m [38;5;241m+[39m
+[1;32m     35[0m         chronology_df[[[38;5;124m'[39m[38;5;124mév[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mirány[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mesemény[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mkapcsolat[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mid[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124ma nyomtatvány rövid leírása[39m[38;5;124m'[39m,]][38;5;241m.[39msort_values([38;5;124m'[39m[38;5;124mév[39m[38;5;124m'[39m)[38;5;241m.[39mto_html() [38;5;241m+[39m
+[1;32m     36[0m         [38;5;124m"[39m[38;5;124m</div>[39m[38;5;124m"[39m
+[1;32m     37[0m     )
+[1;32m     38[0m )
 
-SyntaxError: invalid syntax (2135870316.py, line 1)
+[0;31mNameError[0m: name 'HTML' is not defined
+NameError: name 'HTML' is not defined
 
