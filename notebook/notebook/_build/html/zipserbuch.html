@@ -394,6 +394,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">textwrap</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
@@ -696,46 +697,46 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_3cadb">
+<table id="T_aa9b4">
   <caption>A nyomtatványok között leggyakrabban előforduló nevek</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3cadb_level0_col0" class="col_heading level0 col0" >sender</th>
-      <th id="T_3cadb_level0_col1" class="col_heading level0 col1" >target</th>
-      <th id="T_3cadb_level0_col2" class="col_heading level0 col2" >sum</th>
+      <th id="T_aa9b4_level0_col0" class="col_heading level0 col0" >sender</th>
+      <th id="T_aa9b4_level0_col1" class="col_heading level0 col1" >target</th>
+      <th id="T_aa9b4_level0_col2" class="col_heading level0 col2" >sum</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3cadb_level0_row0" class="row_heading level0 row0" >Seelmann, Christian (1626-1675/76)</th>
-      <td id="T_3cadb_row0_col0" class="data row0 col0" >28</td>
-      <td id="T_3cadb_row0_col1" class="data row0 col1" >92</td>
-      <td id="T_3cadb_row0_col2" class="data row0 col2" >120</td>
+      <th id="T_aa9b4_level0_row0" class="row_heading level0 row0" >Seelmann, Christian (1626-1675/76)</th>
+      <td id="T_aa9b4_row0_col0" class="data row0 col0" >28</td>
+      <td id="T_aa9b4_row0_col1" class="data row0 col1" >92</td>
+      <td id="T_aa9b4_row0_col2" class="data row0 col2" >120</td>
     </tr>
     <tr>
-      <th id="T_3cadb_level0_row1" class="row_heading level0 row1" >Zabeler, Hiob (1628–1664)</th>
-      <td id="T_3cadb_row1_col0" class="data row1 col0" >8</td>
-      <td id="T_3cadb_row1_col1" class="data row1 col1" >92</td>
-      <td id="T_3cadb_row1_col2" class="data row1 col2" >100</td>
+      <th id="T_aa9b4_level0_row1" class="row_heading level0 row1" >Zabeler, Hiob (1628–1664)</th>
+      <td id="T_aa9b4_row1_col0" class="data row1 col0" >8</td>
+      <td id="T_aa9b4_row1_col1" class="data row1 col1" >92</td>
+      <td id="T_aa9b4_row1_col2" class="data row1 col2" >100</td>
     </tr>
     <tr>
-      <th id="T_3cadb_level0_row2" class="row_heading level0 row2" >Zauchtler, Anna Catharina (1635-1668)</th>
-      <td id="T_3cadb_row2_col0" class="data row2 col0" >0</td>
-      <td id="T_3cadb_row2_col1" class="data row2 col1" >73</td>
-      <td id="T_3cadb_row2_col2" class="data row2 col2" >73</td>
+      <th id="T_aa9b4_level0_row2" class="row_heading level0 row2" >Zauchtler, Anna Catharina (1635-1668)</th>
+      <td id="T_aa9b4_row2_col0" class="data row2 col0" >0</td>
+      <td id="T_aa9b4_row2_col1" class="data row2 col1" >73</td>
+      <td id="T_aa9b4_row2_col2" class="data row2 col2" >73</td>
     </tr>
     <tr>
-      <th id="T_3cadb_level0_row3" class="row_heading level0 row3" >Frölich, Anna Euphrosina (?-?)</th>
-      <td id="T_3cadb_row3_col0" class="data row3 col0" >2</td>
-      <td id="T_3cadb_row3_col1" class="data row3 col1" >66</td>
-      <td id="T_3cadb_row3_col2" class="data row3 col2" >68</td>
+      <th id="T_aa9b4_level0_row3" class="row_heading level0 row3" >Frölich, Anna Euphrosina (?-?)</th>
+      <td id="T_aa9b4_row3_col0" class="data row3 col0" >2</td>
+      <td id="T_aa9b4_row3_col1" class="data row3 col1" >66</td>
+      <td id="T_aa9b4_row3_col2" class="data row3 col2" >68</td>
     </tr>
     <tr>
-      <th id="T_3cadb_level0_row4" class="row_heading level0 row4" >Böhm, Christoph (1626-1660)</th>
-      <td id="T_3cadb_row4_col0" class="data row4 col0" >0</td>
-      <td id="T_3cadb_row4_col1" class="data row4 col1" >68</td>
-      <td id="T_3cadb_row4_col2" class="data row4 col2" >68</td>
+      <th id="T_aa9b4_level0_row4" class="row_heading level0 row4" >Böhm, Christoph (1626-1660)</th>
+      <td id="T_aa9b4_row4_col0" class="data row4 col0" >0</td>
+      <td id="T_aa9b4_row4_col1" class="data row4 col1" >68</td>
+      <td id="T_aa9b4_row4_col2" class="data row4 col2" >68</td>
     </tr>
   </tbody>
 </table>
@@ -909,21 +910,7 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">következőkben</span> <span class="n">az</span> <span class="n">adattáblák</span> <span class="n">kapcsolatait</span> <span class="n">felhasználva</span> <span class="n">tetszőleges</span> <span class="n">személyek</span> <span class="n">karrierútját</span> <span class="n">és</span> <span class="n">kapcsolathálóját</span> <span class="n">vázolhatjuk</span> <span class="n">fel</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">A</span> <span class="n">következőkben</span> <span class="n">az</span> <span class="n">adattáblák</span> <span class="n">kapcsolatait</span> <span class="n">felhasználva</span> <span class="n">tetszőleges</span> <span class="n">személyek</span> <span class="n">karrierútját</span> <span class="n">és</span> <span class="n">kapcsolathálóját</span> <span class="n">vázolhatjuk</span> <span class="n">fel</span><span class="o">.</span>
-      <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+<p>A következőkben az adattáblák kapcsolatait felhasználva tetszőleges személyek karrierútját és kapcsolathálóját vázolhatjuk fel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_relations_of_person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
